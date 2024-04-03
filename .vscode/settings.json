@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c"
+    },
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/include",
+    ],
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.formatting": "vcFormat"
+}

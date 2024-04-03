@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe build active file",
+            "command": "gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",                                   // Enable colorized diagnostics
+                "-g",                                                           // Generate debug information
+                "-Wall",                                                        // Enable all warnings
+                "-Wextra",                                                      // Enable extra warnings
+                "-Werror",                                                      // Enable Treats warnings as errors
+                "-std=c17",                                                     // Specify C Language Standard
+                "${file}",                                                      // Input source file
+                "-o",                                                           // Output file option
+                "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe"     // Output executable
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": ""
+        },
+        {
+            "label": "Run",
+            "type": "shell",
+            "command": "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe", // Command to run the executable
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "detail": ""
+        },
+        {
+            "label": "Clean build files",
+            "type": "shell",
+            "command": "rm \"${workspaceFolder}\\build\\*.*\"", // Windows command to delete files
+            "group": {
+                "kind": "none",
+                "isDefault": true
+            },
+            "detail": "",
+            "problemMatcher": []
+        }
+    ]
+}
